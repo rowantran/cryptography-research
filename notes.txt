@@ -1,0 +1,14 @@
+Questions:
+
+Garbled Circuits:
+* Pragmatic MPC's description of Yao GC (pg. 38): why is it necessary to concatenate "i" to the wires' keys when encrypting each entry of the garbled table?
+* What does the adversary (evaluator) learn if we don't permute the table?
+    * They can learn what the other input value was to the circuit, based on where the decrypted entry was in the table:
+        * If they receive k_x^0 or k_x^1, they know which one they received since the table is in order.
+        * So this reveals the circuit generator's input.
+    * How do we formalize this by showing that it's difficult to simulate?
+        * In the correct protocol where the table is permuted, we can simulate the evaluator's view by generating 1 real label for each active wire,
+          and encrypting garbage for the other labels. We can then reduce this to the security of the 
+
+Oblivious Transfer:
+* 
